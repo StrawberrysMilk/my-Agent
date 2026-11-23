@@ -1,0 +1,1 @@
+export {openai, modelName} from './client.js'

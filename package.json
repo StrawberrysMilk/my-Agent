@@ -1,0 +1,26 @@
+{
+  "name": "agent-learning-project",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --parallel --filter @agent-learning/web --filter @agent-learning/server dev",
+    "dev:web": "pnpm --filter @agent-learning/web dev",
+    "dev:server": "pnpm --filter @agent-learning/server dev",
+    "prepare": "simple-git-hooks",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "pnpm --filter @agent-learning/web build && pnpm --filter @agent-learning/server build",
+    "typecheck": "pnpm --filter @agent-learning/web typecheck && pnpm --filter @agent-learning/server typecheck"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^10.0.0",
+    "eslint": "^10.14.0",
+    "lint-staged": "^17.6.0",
+    "simple-git-hooks": "^2.14.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,jsx,ts,tsx,vue}": "eslint --cache --fix"
+  }
+}

@@ -1,0 +1,26 @@
+.timeline { display: flex; min-height: 0; flex: 1; flex-direction: column; align-items: center; overflow: auto; padding: 32px 24px; }
+.request-error { width: min(100%, 760px); align-self: flex-end; margin: 0 auto 20px; padding: 10px 12px; border: 1px solid #fecaca; border-radius: 6px; background: #fef2f2; color: #b91c1c; font-size: 12px; }
+.message-list { display: grid; width: min(100%, 760px); align-content: start; gap: 26px; }
+.message-row { display: flex; width: 100%; align-items: flex-start; gap: 12px; }
+.message-user { flex-direction: row-reverse; }
+.message-assistant { flex-direction: row; }
+.message-avatar { display: grid; width: 30px; height: 30px; flex: 0 0 30px; place-items: center; border-radius: 50%; font-size: 11px; font-weight: 600; }
+.avatar-user { background: #e4e4e7; color: #3f3f46; }
+.avatar-assistant { border: 1px solid #d4d4d8; background: #fff; color: #18181b; }
+.message-body { min-width: 0; max-width: min(80%, 640px); padding-top: 1px; }
+.message-user .message-body { text-align: right; }
+.message-meta { display: flex; align-items: center; gap: 9px; margin-bottom: 7px; }
+.message-user .message-meta { justify-content: flex-end; }
+.message-meta strong { font-size: 12px; font-weight: 600; }
+.message-meta time { color: #a1a1aa; font-size: 10px; }
+.message-body p { margin: 0; color: #3f3f46; font-size: 13px; line-height: 1.75; white-space: pre-wrap; overflow-wrap: anywhere; }
+.empty-state { align-self: center; margin-top: -40px; text-align: center; }
+.empty-mark { display: grid; width: 42px; height: 42px; margin: 0 auto 16px; place-items: center; border: 1px solid #e4e4e7; border-radius: 11px; background: #fafafa; font-weight: 700; }
+.empty-state h2 { margin: 0; font-size: 16px; font-weight: 600; }
+.empty-state p { margin: 8px 0 0; color: #71717a; font-size: 12px; }
+
+@media (max-width: 520px) {
+  .timeline { padding: 24px 16px; }
+  .message-list { gap: 22px; }
+  .message-body { max-width: calc(100% - 42px); }
+}
